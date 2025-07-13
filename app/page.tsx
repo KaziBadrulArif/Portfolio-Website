@@ -237,7 +237,7 @@ export default function Home() {
                 <div className="text-sm text-slate-500 dark:text-slate-400">
                   <div className="flex items-center gap-1 mb-1">
                     <Calendar className="h-4 w-4" />
-                    <span>April 2025 - August 2025</span>
+                    <span>May 2025 - August 2025</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <MapPin className="h-4 w-4" />
