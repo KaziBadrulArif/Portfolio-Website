@@ -55,38 +55,38 @@ export default function WorkExperiencePage() {
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-slate-800 dark:text-white">Work Experience</h1>
 
         <div className="max-w-4xl mx-auto">
-          <WorkExperience
-            title="Software Engineering Intern"
-            company="Data Elysium"
-            location="Calgary, AB"
-            period="April 2023 - August 2023"
-            description="Worked as a software engineering intern at Data Elysium, focusing on developing and implementing RAG (Retrieval-Augmented Generation) chatbots. Collaborated with a team of engineers to design, build, and optimize AI-powered conversational systems that leverage both retrieval and generation capabilities."
-            responsibilities={[
-              "Developed and implemented RAG chatbot systems using modern NLP techniques",
-              "Built and optimized vector databases for efficient information retrieval",
-              "Integrated large language models with custom knowledge bases",
-              "Created APIs for seamless integration with frontend applications",
-              "Implemented user feedback mechanisms to improve chatbot responses",
-              "Conducted testing and performance optimization of chatbot systems",
-              "Collaborated with cross-functional teams to define requirements and features",
-              "Documented code, processes, and system architecture",
-            ]}
-            technologies={[
-              "Python",
-              "JavaScript",
-              "React",
-              "Node.js",
-              "LangChain",
-              "Vector Databases",
-              "LLMs",
-              "REST APIs",
-              "Git",
-              "Docker",
-            ]}
-          />
+  <WorkExperience
+    title="Software Developer (Contract)"
+    company="Data Elysium"
+    location="Remote / Calgary, AB"
+    period="May 2025 – August 2025"
+    description="Built an interactive chatbot UI using React.js that helped 500+ users retrieve insights from uploaded PDFs via RAG and OpenAI integration, improving response accuracy by 35%. Collaborated closely with backend engineers to implement secure REST API endpoints and enhance overall system performance."
+    responsibilities={[
+      "Developed RAG chatbot systems leveraging NLP techniques and OpenAI APIs",
+      "Engineered and optimized vector databases for fast, accurate information retrieval",
+      "Integrated large language models with custom knowledge bases for improved context understanding",
+      "Created and maintained RESTful APIs for seamless frontend-backend communication",
+      "Implemented JWT-based authentication and role-based access control to secure user data",
+      "Collaborated with cross-functional teams to define product requirements and ensure timely delivery",
+      "Performed rigorous testing and optimized system performance for scalability",
+      "Documented codebase, APIs, and system architecture for future maintenance",
+    ]}
+    technologies={[
+      "React.js",
+      "Python",
+      "JavaScript",
+      "Node.js",
+      "Django REST Framework",
+      "OpenAI API",
+      "LangChain",
+      "Vector Databases",
+      "JWT Authentication",
+      "Docker",
+      "Git",
+    ]}
+  />
+</div>
 
-          {/* You can add more work experiences as they come */}
-        </div>
       </div>
 
       <footer className="bg-slate-800 text-white py-8 mt-20">
