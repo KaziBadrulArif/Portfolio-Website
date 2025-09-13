@@ -273,45 +273,50 @@ export default function Home() {
 
 
         {/* Projects Section */}
-        <section id="projects" className="container mx-auto px-4 py-20">
-  <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-800 dark:text-white">
-    Featured Projects
-  </h2>
-  <p className="text-slate-600 dark:text-slate-400 text-center mb-12 max-w-2xl mx-auto">
-    Here are some of my recent projects that showcase my skills and passion for building innovative solutions.
-  </p>
-  {/* Updated grid container with max-width and specific breakpoints */}
-  <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  <ProjectCard
-    title="IELTS Mock Test Creator"
-    description="An AI-powered writing test platform that gives instant, intelligent feedback to IELTS learners. It uses NLP models and a dynamic frontend to simulate the real IELTS experience."
-    technologies={["React", "Django", "AI APIs", "TailwindCSS"]}
-    features={["Live feedback", "Secure test submission", "Clean UI", "User tracking"]}
-    liveLink="https://github.com/KaziBadrulArif/Ielts-Ai-Mock"
-    githubLink="https://github.com/KaziBadrulArif/Ielts-Ai-Mock"
-    imageSrc="IELTS_MOCK.png"
-    featured={true}
-  />
-  <ProjectCard
-    title="NextStep – UCalgary Job Portal"
-    description="A tailored platform for University of Calgary students to connect with employers. Features include student/employer dashboards, job posting, application tracking, and moderator approval flow."
-    technologies={["React", "Django REST", "Styled Components", "JWT Auth"]}
-    features={["Role-based login", "Application review", "Email notifications", "Saved jobs"]}
-    liveLink="https://github.com/mahmudul-ai/NextStep-UofC"
-    githubLink="https://github.com/mahmudul-ai/NextStep-UofC"
-    imageSrc="NEXTSTEP.png"
-  />
-  <ProjectCard
-    title="UofC Degree Navigator"
-    description="A sleek academic planning tool that helps UCalgary students visualize their progress and plan future semesters."
-    technologies={["React", "Django", "Chart.js"]}
-    features={["Dynamic degree audit", "Credit tracking", "Course prerequisites", "UI timeline"]}
-    liveLink="https://github.com/HighBlinks/481Project"
-    githubLink="https://github.com/HighBlinks/481Project"
-    imageSrc="UofCDegreeNav.png"
-  />
-</div>
-        </section>
+<section className="py-20 bg-slate-50 dark:bg-slate-900/50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-800 dark:text-white">
+      Featured Projects
+    </h2>
+    <p className="text-slate-600 dark:text-slate-400 text-center mb-12 max-w-2xl mx-auto">
+      Here are some of my recent projects that showcase my skills and passion for building innovative solutions.
+    </p>
+    
+    {/* Projects Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <ProjectCard
+        title="IELTS Mock Test Creator"
+        description="An AI-powered writing test platform that gives instant, intelligent feedback to IELTS learners. It uses NLP models and a dynamic frontend to simulate the real IELTS experience."
+        technologies={["React", "Django", "AI APIs", "TailwindCSS"]}
+        features={["Live feedback", "Secure test submission", "Clean UI", "User tracking"]}
+        liveLink="https://github.com/KaziBadrulArif/Ielts-Ai-Mock"
+        githubLink="https://github.com/KaziBadrulArif/Ielts-Ai-Mock"
+        imageSrc="IELTS_MOCK.png"
+        featured={true}
+      />
+      
+      <ProjectCard
+        title="NextStep – UCalgary Job Portal"
+        description="A tailored platform for University of Calgary students to connect with employers. Features include student/employer dashboards, job posting, application tracking, and moderator approval flow."
+        technologies={["React", "Django REST", "Styled Components", "JWT Auth"]}
+        features={["Role-based login", "Application review", "Email notifications", "Saved jobs"]}
+        liveLink="https://github.com/mahmudul-ai/NextStep-UofC"
+        githubLink="https://github.com/mahmudul-ai/NextStep-UofC"
+        imageSrc="NEXTSTEP.png"
+      />
+      
+      <ProjectCard
+        title="UofC Degree Navigator"
+        description="A sleek academic planning tool that helps UCalgary students visualize their progress and plan future semesters."
+        technologies={["React", "Django", "Chart.js"]}
+        features={["Dynamic degree audit", "Credit tracking", "Course prerequisites", "UI timeline"]}
+        liveLink="https://github.com/HighBlinks/481Project"
+        githubLink="https://github.com/HighBlinks/481Project"
+        imageSrc="UofCDegreeNav.png"
+      />
+    </div>
+  </div>
+</section>
 
         {/* About Section */}
         <section id="about" className="bg-slate-100 dark:bg-slate-800/50 py-20">
