@@ -27,10 +27,10 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div
-      className={`overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl ${
-        featured ? "border-2 border-purple-500 dark:border-purple-600" : "border border-slate-200 dark:border-slate-700"
-      }`}
-    >
+  className={`overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl ${
+    featured ? "border-2 border-purple-500 dark:border-purple-600" : "border border-slate-200 dark:border-slate-700"
+  } h-full flex flex-col`}
+/>
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-1/2 relative overflow-hidden group">
           <div className="relative h-64 lg:h-full w-full">

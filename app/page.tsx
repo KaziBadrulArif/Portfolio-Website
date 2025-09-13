@@ -280,7 +280,7 @@ export default function Home() {
           <p className="text-slate-600 dark:text-slate-400 text-center mb-12 max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and passion for building innovative solutions.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
   <ProjectCard
     title="IELTS Mock Test Creator"
     description="An AI-powered writing test platform that gives instant, intelligent feedback to IELTS learners. It uses NLP models and a dynamic frontend to simulate the real IELTS experience."
