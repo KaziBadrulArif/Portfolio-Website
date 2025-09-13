@@ -274,13 +274,14 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="container mx-auto px-4 py-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-800 dark:text-white">
-            Featured Projects
-          </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-center mb-12 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for building innovative solutions.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-800 dark:text-white">
+    Featured Projects
+  </h2>
+  <p className="text-slate-600 dark:text-slate-400 text-center mb-12 max-w-2xl mx-auto">
+    Here are some of my recent projects that showcase my skills and passion for building innovative solutions.
+  </p>
+  {/* Updated grid container with max-width and specific breakpoints */}
+  <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
   <ProjectCard
     title="IELTS Mock Test Creator"
     description="An AI-powered writing test platform that gives instant, intelligent feedback to IELTS learners. It uses NLP models and a dynamic frontend to simulate the real IELTS experience."
