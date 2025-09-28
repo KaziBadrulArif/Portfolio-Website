@@ -7,9 +7,7 @@ const config: Config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
   ],
-  prefix: "",
   theme: {
     container: {
       center: true,
@@ -76,9 +74,9 @@ const config: Config = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
     require("@tailwindcss/line-clamp"),
     require("@tailwindcss/aspect-ratio"),
+    require("tailwindcss-animate"),
   ],
 }
 

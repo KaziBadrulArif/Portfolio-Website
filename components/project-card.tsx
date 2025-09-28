@@ -1,7 +1,7 @@
 // components/project-card.tsx
 import Image from "next/image"
 import Link from "next/link"
-import { Badge } from "./ui/badge"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "./ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "./ui/card"

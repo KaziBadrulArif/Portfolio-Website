@@ -110,7 +110,7 @@ export default function Home() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-600 shadow-xl transform transition-transform hover:scale-105 duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 animate-pulse"></div>
               <Image
-                src="Kazi_IMG.png"
+                src="/Kazi_IMG.png"
                 alt="Kazi Badrul Arif"
                 width={320}
                 height={320}
