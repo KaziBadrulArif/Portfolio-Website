@@ -10,12 +10,13 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div
-      className={`w-full max-w-sm bg-white dark:bg-slate-800 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl overflow-hidden ${
-        featured ? "border-2 border-purple-500 dark:border-purple-600" : "border border-slate-200 dark:border-slate-700"
-      }`}
+      className={`w-full max-w-sm rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl overflow-hidden
+      ${featured ? "border-2 border-purple-500 dark:border-purple-600" : "border border-slate-200 dark:border-slate-700"}
+      bg-white dark:bg-slate-800
+      h-full flex flex-col`}          // ← equal height + vertical layout
     >
-      {/* Image Container - Fixed height */}
-      <div className="relative w-full h-48">
+      {/* Image (top) with consistent height */}
+      <div className="relative w-full aspect-[16/9]">  {/* ← same height on all cards */}
         <Image
           src={imageSrc || "/placeholder.svg"}
           alt={title}
@@ -23,7 +24,7 @@ export default function ProjectCard({
           className="object-cover"
           priority
         />
-        {/* Hover Overlay */}
+        {/* Hover Overlay (optional) */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
           <div className="flex gap-2">
             <Link href={liveLink} target="_blank" rel="noopener noreferrer">
@@ -40,16 +41,16 @@ export default function ProjectCard({
         </div>
       </div>
 
-      {/* Content Container */}
-      <div className="p-5">
-        {/* Title and Badge */}
+      {/* Content */}
+      <div className="p-5 flex-1 flex flex-col">  {/* ← let content grow to balance heights */}
+        {/* Title + badge */}
         <div className="flex justify-between items-start mb-3">
           <h3 className="text-lg font-bold text-slate-800 dark:text-white">{title}</h3>
           {featured && <Badge className="bg-purple-600">Featured</Badge>}
         </div>
 
-        {/* Description */}
-        <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+        {/* Description (same number of lines across cards) */}
+        <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
           {description}
         </p>
 
@@ -72,7 +73,7 @@ export default function ProjectCard({
         </div>
 
         {/* Features */}
-        <div>
+        <div className="mt-auto">  {/* ← pushes this block to the bottom for alignment */}
           <h4 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
             Key Features
           </h4>
@@ -89,5 +90,5 @@ export default function ProjectCard({
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -283,7 +283,7 @@ export default function Home() {
     </p>
     
     {/* Projects Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3 auto-rows-fr items-stretch">
       <ProjectCard
         title="IELTS Mock Test Creator"
         description="An AI-powered writing test platform that gives instant, intelligent feedback to IELTS learners. It uses NLP models and a dynamic frontend to simulate the real IELTS experience."
