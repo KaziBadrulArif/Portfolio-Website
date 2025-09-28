@@ -1,3 +1,22 @@
+// components/project-card.tsx
+import Image from "next/image"
+import Link from "next/link"
+import { Badge } from "./ui/badge"
+import { Button } from "./ui/button"
+import { ExternalLink, Github } from "lucide-react"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "./ui/card"
+
+type ProjectCardProps = {
+  title: string
+  description: string
+  technologies: string[]
+  features: string[]
+  liveLink?: string
+  githubLink?: string
+  imageSrc?: string
+  featured?: boolean
+}
+
 export default function ProjectCard({
   title,
   description,
@@ -9,54 +28,53 @@ export default function ProjectCard({
   featured = false,
 }: ProjectCardProps) {
   return (
-    <div
-      className={`w-full max-w-sm rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl overflow-hidden
-      ${featured ? "border-2 border-purple-500 dark:border-purple-600" : "border border-slate-200 dark:border-slate-700"}
-      bg-white dark:bg-slate-800
-      h-full flex flex-col`}          // ← equal height + vertical layout
-    >
-      {/* Image (top) with consistent height */}
-      <div className="relative w-full aspect-[16/9]">  {/* ← same height on all cards */}
+    <Card className={`w-full overflow-hidden h-full flex flex-col ${
+      featured ? "border-2 border-purple-500 dark:border-purple-600" : ""
+    }`}>
+      {/* Image: same height everywhere */}
+      <div className="relative w-full aspect-[16/9]">
         <Image
           src={imageSrc || "/placeholder.svg"}
           alt={title}
           fill
+          sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover"
           priority
         />
-        {/* Hover Overlay (optional) */}
+        {/* Hover overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
           <div className="flex gap-2">
-            <Link href={liveLink} target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
-                <ExternalLink className="h-4 w-4 mr-2" /> Demo
-              </Button>
-            </Link>
-            <Link href={githubLink} target="_blank" rel="noopener noreferrer">
-              <Button size="sm" variant="outline" className="bg-slate-800/80 text-white border-slate-600 hover:bg-slate-700">
-                <Github className="h-4 w-4 mr-2" /> Code
-              </Button>
-            </Link>
+            {liveLink && (
+              <Link href={liveLink} target="_blank" rel="noopener noreferrer">
+                <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
+                  <ExternalLink className="h-4 w-4 mr-2" /> Demo
+                </Button>
+              </Link>
+            )}
+            {githubLink && (
+              <Link href={githubLink} target="_blank" rel="noopener noreferrer">
+                <Button size="sm" variant="outline" className="bg-slate-800/80 text-white border-slate-600 hover:bg-slate-700">
+                  <Github className="h-4 w-4 mr-2" /> Code
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="p-5 flex-1 flex flex-col">  {/* ← let content grow to balance heights */}
-        {/* Title + badge */}
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="text-lg font-bold text-slate-800 dark:text-white">{title}</h3>
+      {/* Header */}
+      <CardHeader className="space-y-2">
+        <div className="flex justify-between items-start">
+          <CardTitle className="text-xl">{title}</CardTitle>
           {featured && <Badge className="bg-purple-600">Featured</Badge>}
         </div>
+        <CardDescription className="line-clamp-3">{description}</CardDescription>
+      </CardHeader>
 
-        {/* Description (same number of lines across cards) */}
-        <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
-          {description}
-        </p>
-
-        {/* Technologies */}
-        <div className="mb-4">
-          <h4 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
+      {/* Content grows; features pinned at bottom */}
+      <CardContent className="space-y-4 flex-1 flex flex-col">
+        <div>
+          <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
             Technologies
           </h4>
           <div className="flex flex-wrap gap-1.5">
@@ -72,9 +90,8 @@ export default function ProjectCard({
           </div>
         </div>
 
-        {/* Features */}
-        <div className="mt-auto">  {/* ← pushes this block to the bottom for alignment */}
-          <h4 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
+        <div className="mt-auto">
+          <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
             Key Features
           </h4>
           <ul className="grid grid-cols-2 gap-x-2 gap-y-1">
@@ -88,7 +105,7 @@ export default function ProjectCard({
             ))}
           </ul>
         </div>
-      </div>
-    </div>
-  );
+      </CardContent>
+    </Card>
+  )
 }
